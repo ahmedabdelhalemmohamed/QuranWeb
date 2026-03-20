@@ -1,3 +1,25 @@
 @import "tailwindcss";
 
 
+@import url(https://fonts.googleapis.com/css?family=Cairo:200,300,regular,500,600,700,800,900);
+
+@theme {
+    --font-cairo: "Cairo";
+    --animate-hello: hello 1.5s forwards ease-in-out;
+}
+
+@keyframes hello {
+    0% {
+        opacity: 0; 
+        transform: translateX(-100%);
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
