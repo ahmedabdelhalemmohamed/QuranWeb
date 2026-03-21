@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <div>
 
-      <nav className='bg-indigo-500 p-4 text-white shadow-2xl sticky inset-0'>
+      <nav className='bg-indigo-500 p-4 text-white shadow-2xl sticky z-50'>
         {location.pathname === '/' ? 
         <div className='font-cairo text-4xl'>القرءان</div>
         : 
@@ -39,15 +39,14 @@ const Navbar = () => {
 
       {
         openMenu ? 
-        <div className='animate-menu sticky'>
-            <ul className='font-cairo text-2xl flex flex-col space-y-3 bg-indigo-500 min-h-75 text-white sm:hidden'>
+        <div className='animate-menu fixed z-50 w-100'>
+            <ul className='font-cairo text-2xl flex flex-col space-y-3 bg-indigo-500 min-h-75 text-white sm:hidden text-center'>
               <li className='btn' onClick={() => setOpenMenu(prev => !prev)}> <Link to="/">الصفحة الرئيسية</Link></li>
               <li className='btn' onClick={() => setOpenMenu(prev => !prev)}>تفسير</li>  
               <li className='btn' onClick={() => setOpenMenu(prev => !prev)}>الأذكار</li>
               <li className='btn' onClick={() => setOpenMenu(prev => !prev)}>من نحن</li>
-
             </ul>  
-          </div> 
+        </div> 
         :
         <div></div>
       }
