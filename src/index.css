@@ -6,6 +6,12 @@
 @theme {
     --font-cairo: "Cairo";
     --animate-hello: hello 1.5s forwards ease-in-out;
+    --animate-links: hello 2.5s forwards ease-in-out;
+    --animate-menu: menu 1s forwards ease-in-out;
+}
+
+.btn {
+    @apply bg-slate-500 px-5 py-3 rounded-lg hover:bg-slate-400 cursor-pointer
 }
 
 @keyframes hello {
@@ -21,5 +27,19 @@
     100% {
         opacity: 1;
     }
+}
+
+@keyframes menu {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+
 }
 
