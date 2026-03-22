@@ -8,6 +8,7 @@ const Quran = () => {
   const [selectedSurahIndex, setSelectedSurahIndex] = useState(0);
   const [ayahs, setAyahs] = useState([]);
   const [showPage, setShowPage] = useState(1);
+  const [showJuz, setShowJuz] = useState(1);
 
   useEffect(() => {
     const getSurahs = async () => {
@@ -26,22 +27,32 @@ const Quran = () => {
 
     const surah = surahs[selectedSurahIndex];
     setAyahs(surah.ayahs);
-    setShowPage(surah.ayahs[0].page); 
+    setShowPage(surah.ayahs[0].page);
   }, [selectedSurahIndex, surahs]);
+
+  useEffect(() => {
+    if (!ayahs.length) return;
+
+    const firstAyahInPage = ayahs.find(
+      (ayah) => ayah.page === showPage
+    );
+
+    if (firstAyahInPage) {
+      setShowJuz(firstAyahInPage.juz);
+    }
+
+  }, [showPage, ayahs]);
 
   const handleNext = () => {
     if (!ayahs.length) return;
 
-    const lastPageInSurah = ayahs[ayahs.length - 1].page; //49
+    const lastPageInSurah = ayahs[ayahs.length - 1].page;
 
     if (showPage < lastPageInSurah) {
       setShowPage(showPage + 1);
-    } 
-    
-    else {
+    } else {
       if (selectedSurahIndex < surahs.length - 1) {
         const nextIndex = selectedSurahIndex + 1;
-
         const nextSurah = surahs[nextIndex];
 
         setSelectedSurahIndex(nextIndex);
@@ -51,9 +62,6 @@ const Quran = () => {
     }
   };
 
-  console.log(ayahs);
-  console.log(selectedSurahIndex);
-
   const handlePrev = () => {
     if (!ayahs.length) return;
 
@@ -61,12 +69,9 @@ const Quran = () => {
 
     if (showPage > firstPageInSurah) {
       setShowPage(showPage - 1);
-    } 
-
-    else {
+    } else {
       if (selectedSurahIndex > 0) {
         const prevIndex = selectedSurahIndex - 1;
-
         const prevSurah = surahs[prevIndex];
 
         setSelectedSurahIndex(prevIndex);
@@ -92,12 +97,15 @@ const Quran = () => {
         ))}
       </select>
 
+      <div>الصفحة {showPage}</div>
+      <div>الجزء {showJuz}</div>
+
       <div>
-        {ayahs.map((ayah) =>
-          ayah.page === showPage ? (
+        {ayahs
+          .filter((ayah) => ayah.page === showPage)
+          .map((ayah) => (
             <p key={ayah.number}>{ayah.text}</p>
-          ) : null
-        )}
+          ))}
       </div>
 
       <div>
