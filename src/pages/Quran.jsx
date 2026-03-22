@@ -9,6 +9,7 @@ const Quran = () => {
   const [ayahs, setAyahs] = useState([]);
   const [showPage, setShowPage] = useState(1);
   const [showJuz, setShowJuz] = useState(1);
+  const [fromSelect, setFromSelect] = useState(false);
 
   useEffect(() => {
     const getSurahs = async () => {
@@ -27,7 +28,12 @@ const Quran = () => {
 
     const surah = surahs[selectedSurahIndex];
     setAyahs(surah.ayahs);
-    setShowPage(surah.ayahs[0].page);
+
+    if (fromSelect) {
+      setShowPage(surah.ayahs[0].page);
+      setFromSelect(false);
+    }
+
   }, [selectedSurahIndex, surahs]);
 
   useEffect(() => {
@@ -50,15 +56,12 @@ const Quran = () => {
 
     if (showPage < lastPageInSurah) {
       setShowPage(showPage + 1);
-    } else {
-      if (selectedSurahIndex < surahs.length - 1) {
-        const nextIndex = selectedSurahIndex + 1;
-        const nextSurah = surahs[nextIndex];
+    } else if (selectedSurahIndex < surahs.length - 1) {
+      const nextIndex = selectedSurahIndex + 1;
+      const nextSurah = surahs[nextIndex];
 
-        setSelectedSurahIndex(nextIndex);
-        setAyahs(nextSurah.ayahs);
-        setShowPage(nextSurah.ayahs[0].page);
-      }
+      setSelectedSurahIndex(nextIndex);
+      setShowPage(nextSurah.ayahs[0].page);
     }
   };
 
@@ -66,39 +69,43 @@ const Quran = () => {
     if (!ayahs.length) return;
 
     const firstPageInSurah = ayahs[0].page;
+    console.log(firstPageInSurah)
 
     if (showPage > firstPageInSurah) {
       setShowPage(showPage - 1);
-    } else {
-      if (selectedSurahIndex > 0) {
-        const prevIndex = selectedSurahIndex - 1;
-        const prevSurah = surahs[prevIndex];
+    } else if (selectedSurahIndex > 0) {
+      const prevIndex = selectedSurahIndex - 1;
+      const prevSurah = surahs[prevIndex];
 
-        setSelectedSurahIndex(prevIndex);
-        setAyahs(prevSurah.ayahs);
+      setSelectedSurahIndex(prevIndex);
 
-        const lastPage = prevSurah.ayahs[prevSurah.ayahs.length - 1].page;
-        setShowPage(lastPage);
-      }
+      const lastPage = prevSurah.ayahs[prevSurah.ayahs.length - 1].page;
+      setShowPage(lastPage);
     }
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div>
 
-      <select
-        value={selectedSurahIndex}
-        onChange={(e) => setSelectedSurahIndex(Number(e.target.value))}
-      >
-        {surahs.map((surah, index) => (
-          <option key={surah.number} value={index}>
-            {surah.name}
-          </option>
-        ))}
-      </select>
+      <div className='flex justify-between mb-5 mt-5 p-5 text-white'>
+        <select
+          value={selectedSurahIndex}
+          onChange={(e) => {
+            setFromSelect(true); 
+            setSelectedSurahIndex(Number(e.target.value));
+          }}
+          className='border border-slate-500 rounded-lg p-3 bg-indigo-500'
+        >
+          {surahs.map((surah, index) => (
+            <option key={surah.number} value={index}>
+              {surah.name} {index}
+            </option>
+          ))}
+        </select>
 
-      <div>الصفحة {showPage}</div>
-      <div>الجزء {showJuz}</div>
+        <div className='btn-menu'>الصفحة {showPage}</div>
+        <div className='btn-menu'>الجزء {showJuz}</div>
+      </div>
 
       <div>
         {ayahs
