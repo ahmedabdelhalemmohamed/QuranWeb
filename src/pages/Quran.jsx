@@ -85,9 +85,9 @@ const Quran = () => {
   };
 
   return (
-    <div>
+    <div className='p-2 '>
 
-      <div className='flex justify-between mb-5 mt-5 p-5 text-white'>
+      <div className='flex justify-around mb-5 mt-5  text-white'>
         <select
           value={selectedSurahIndex}
           onChange={(e) => {
@@ -107,20 +107,27 @@ const Quran = () => {
         <div className='btn-menu'>الجزء {showJuz}</div>
       </div>
 
-      <div>
+      <div className='flex flex-wrap justify-center space-x-2 space-y-5  mt-10 font-cairo'>
         {ayahs
           .filter((ayah) => ayah.page === showPage)
           .map((ayah) => (
-            <p key={ayah.number}>{ayah.text}</p>
+            
+              <span className='text-center text-xl sm:text-2xl leading-loose'>
+                {ayah.text}
+                <span className='mr-2'>({ayah.numberInSurah})</span>
+              </span>
+
+              
+              
           ))}
       </div>
 
-      <div>
-        <button onClick={handlePrev}>
+      <div className='flex justify-center mt-10 space-x-1'>
+        <button onClick={handlePrev} className='btn-menu'>
           <ArrowRight />
         </button>
 
-        <button onClick={handleNext}>
+        <button onClick={handleNext} className='btn-menu'>
           <ArrowLeft />
         </button>
       </div>

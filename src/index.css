@@ -15,7 +15,7 @@
 }
 
 .btn-menu {
-    @apply border border-slate-500 rounded-lg p-3 bg-indigo-500
+    @apply border border-slate-500 rounded-lg p-3 bg-indigo-500 text-white hover:bg-indigo-400
 }
 
 @keyframes hello {
