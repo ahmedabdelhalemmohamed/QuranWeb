@@ -86,7 +86,7 @@ const Quran = () => {
 
   return (
     <div className='p-2 '>
-
+    
       <div className='flex justify-around mb-5 mt-5  text-white'>
         <select
           value={selectedSurahIndex}
@@ -98,7 +98,7 @@ const Quran = () => {
         >
           {surahs.map((surah, index) => (
             <option key={surah.number} value={index}>
-              {surah.name} {index}
+              {surah.name}
             </option>
           ))}
         </select>

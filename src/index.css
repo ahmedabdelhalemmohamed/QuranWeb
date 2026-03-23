@@ -18,6 +18,10 @@
     @apply border border-slate-500 rounded-lg p-3 bg-indigo-500 text-white hover:bg-indigo-400
 }
 
+.text-ayahs {
+    @apply text-xl sm:text-2xl
+}
+
 @keyframes hello {
     0% {
         opacity: 0; 

@@ -13,7 +13,7 @@ const Home = () => {
             <Link to="/quran" className='cursor-pointer mt-5  font-cairo text-2xl py-5 px-10 bg-slate-500 hover:bg-slate-400 transition-colors rounded-lg'>القرءان</Link>
           </div>
           <div>
-            <Link to="/randomAyah" className='cursor-pointer mt-5  font-cairo text-2xl py-5 px-10 bg-slate-500 hover:bg-slate-400 transition-colors rounded-lg'>أية مختارة</Link>
+            <Link to="/randomAyah" className='cursor-pointer mt-5  font-cairo text-2xl py-5 px-10 bg-slate-500 hover:bg-slate-400 transition-colors rounded-lg'>اختبر حفظك</Link>
           </div>
 
         </div>

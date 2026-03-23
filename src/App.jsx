@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Quran from './pages/Quran'
 import RandomAyah from './pages/randomAyah'
+import Tafsir from './pages/Tafsir'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path='/' element={<Home />}/>
         <Route path='/quran' element={<Quran />}/>
         <Route path='/randomAyah' element={<RandomAyah />}/>
+        <Route path='/tafsir' element={<Tafsir />}/>
       </Routes>
     </div>
   )

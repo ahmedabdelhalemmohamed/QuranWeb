@@ -18,7 +18,7 @@ const Navbar = () => {
           <div>
             <ul className='font-cairo text-2xl flex space-x-3 hidden sm:flex'>
               <li className='btn'> <Link to="/">الصفحة الرئيسية</Link></li>
-              <li className='btn'>تفسير</li>  
+              <li className='btn'> <Link to="/tafsir">تفسير</Link></li>  
               <li className='btn'>الأذكار</li>
               <li className='btn'>من نحن</li>
 
