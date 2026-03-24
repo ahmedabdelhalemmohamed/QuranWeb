@@ -7,20 +7,27 @@ import RandomAyah from './pages/randomAyah'
 import Tafsir from './pages/Tafsir'
 import Remembrances from './pages/Remembrances'
 import Questions from './pages/Questions'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div>
+    <div className='min-h-screen flex flex-col'>
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/quran' element={<Quran />}/>
-        <Route path='/randomAyah' element={<RandomAyah />}/>
-        <Route path='/tafsir' element={<Tafsir />}/>
-        <Route path='/remembrances/:id' element={<Remembrances />}/>
-        <Route path='/question' element={<Questions />}/>
-        
-      </Routes>
+      <div className='flex-1'>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/quran' element={<Quran />}/>
+          <Route path='/randomAyah' element={<RandomAyah />}/>
+          <Route path='/tafsir' element={<Tafsir />}/>
+          <Route path='/remembrances/:id' element={<Remembrances />}/>
+          <Route path='/question' element={<Questions />}/>
+          
+        </Routes>
+
+      </div>
+      <div className=' bg-indigo-500 w-full text-center text-ayahs text-white pad'>
+        <Footer />
+      </div>
     </div>
   )
 }

@@ -38,11 +38,11 @@ const Questions = () => {
         console.log(current);
 
         return (
-          <div key={qIndex} className='space-x-3 pad border border-slate-500 rounded-lg p-3 bg-indigo-500 text-white cursor-pointer font-cairo text-ayahs'>
+          <div key={qIndex} className='space-x-3 pad border border-slate-500 rounded-lg p-3 bg-indigo-500 text-white cursor-pointer font-cairo text-ayahs overflow-hidden'>
 
-            <span className='btn !bg-slate-600'>{q.category}</span>
-            <span>&gt;</span>
-            <span className='btn !bg-slate-600'>{q.topic}</span>
+            <span className='btn !bg-slate-600 inline-block'>{q.category}</span>
+            <span className='hidden sm:inline-block'>&gt;</span>
+            <span className='btn !bg-slate-600 inline-block'>{q.topic}</span>
 
             <div className='mt-5'>
               <div className='btn !bg-slate-600 mb-10'>
