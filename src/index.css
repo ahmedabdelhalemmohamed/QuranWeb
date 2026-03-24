@@ -19,7 +19,7 @@
 }
 
 .btn-home {
-    @apply cursor-pointer mt-5  font-cairo text-2xl py-5 px-10 bg-slate-600 hover:bg-slate-500 transition-colors rounded-lg
+    @apply cursor-pointer mt-5  font-cairo text-xl py-5 px-10 bg-slate-600 hover:bg-slate-500 transition-colors rounded-lg
 }
 
 .btn-nav {
