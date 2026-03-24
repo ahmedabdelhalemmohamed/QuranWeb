@@ -31,7 +31,7 @@ const Questions = () => {
   console.log(answersState);
 
   return (
-    <div className='space-y-5 pad'>
+    <div className='space-y-5 pad text-center'>
 
       {question.map((q, qIndex) => {
         const current = answersState[qIndex];
@@ -52,9 +52,9 @@ const Questions = () => {
               <div className='space-y-10 text-center'>
 
                 {q.answers.map((ans, index) => (
-                  <div key={index}>
+                  <div key={index} className='transition-transform hover:scale-110'>
                     <span
-                      className={`btn ${
+                      className={`btn inline-block  ${
                         current
                           ? ans.t === 1
                             ? "!bg-green-500  opacity-70"

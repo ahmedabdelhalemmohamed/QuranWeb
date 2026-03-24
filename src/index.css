@@ -27,7 +27,7 @@
 }
 
 .pad {
-    @apply sm:p-5 p-3
+    @apply sm:p-5 p-5
 }
 
 @keyframes hello {
