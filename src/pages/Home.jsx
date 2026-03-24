@@ -8,13 +8,21 @@ const Home = () => {
   return (
     <div className='text-center p-5 sm:p-10 overflow-hidden'>
         <Hello />
-        <div className='flex justify-center mt-10 space-x-3 text-white animate-links'>
+        <div className='flex flex-wrap space-y-15 justify-center mt-10 space-x-3 text-white animate-links'>
           <div>
-            <Link to="/quran" className='cursor-pointer mt-5  font-cairo text-2xl py-5 px-10 bg-slate-500 hover:bg-slate-400 transition-colors rounded-lg'>القرءان</Link>
+            <Link to="/quran" className='btn-home'>القرءان</Link>
           </div>
           <div>
-            <Link to="/randomAyah" className='cursor-pointer mt-5  font-cairo text-2xl py-5 px-10 bg-slate-500 hover:bg-slate-400 transition-colors rounded-lg'>اختبر حفظك</Link>
+            <Link to="/randomAyah" className='btn-home'>اختبر حفظك</Link>
           </div>
+
+          <div>
+            <Link to={`/remembrances/1`} className='btn-home'> أذكار الصباح</Link>
+          </div>
+          <div>
+            <Link to={`/remembrances/2`} className='btn-home'>أذكار المساء</Link>
+          </div>
+
 
         </div>
     </div>

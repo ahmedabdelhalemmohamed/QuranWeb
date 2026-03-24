@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Quran from './pages/Quran'
 import RandomAyah from './pages/randomAyah'
 import Tafsir from './pages/Tafsir'
+import Remembrances from './pages/Remembrances'
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
         <Route path='/quran' element={<Quran />}/>
         <Route path='/randomAyah' element={<RandomAyah />}/>
         <Route path='/tafsir' element={<Tafsir />}/>
+        <Route path='/remembrances/:id' element={<Remembrances />}/>
+        
       </Routes>
     </div>
   )

@@ -15,7 +15,11 @@
 }
 
 .btn-menu {
-    @apply border border-slate-500 rounded-lg p-3 bg-indigo-500 text-white hover:bg-indigo-400
+    @apply border border-slate-500 rounded-lg p-3 bg-indigo-500 text-white hover:bg-indigo-400 cursor-pointer
+}
+
+.btn-home {
+    @apply cursor-pointer mt-5  font-cairo text-2xl py-5 px-10 bg-slate-500 hover:bg-slate-400 transition-colors rounded-lg
 }
 
 .text-ayahs {

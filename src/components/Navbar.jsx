@@ -19,7 +19,6 @@ const Navbar = () => {
             <ul className='font-cairo text-2xl flex space-x-3 hidden sm:flex'>
               <li className='btn'> <Link to="/">الصفحة الرئيسية</Link></li>
               <li className='btn'> <Link to="/tafsir">تفسير</Link></li>  
-              <li className='btn'>الأذكار</li>
               <li className='btn'>من نحن</li>
 
             </ul>  
@@ -43,7 +42,6 @@ const Navbar = () => {
             <ul className='font-cairo text-2xl flex flex-col space-y-3 bg-indigo-500 min-h-75 text-white sm:hidden text-center'>
               <li className='btn' onClick={() => setOpenMenu(prev => !prev)}> <Link to="/">الصفحة الرئيسية</Link></li>
               <li className='btn' onClick={() => setOpenMenu(prev => !prev)}>تفسير</li>  
-              <li className='btn' onClick={() => setOpenMenu(prev => !prev)}>الأذكار</li>
               <li className='btn' onClick={() => setOpenMenu(prev => !prev)}>من نحن</li>
             </ul>  
         </div> 
