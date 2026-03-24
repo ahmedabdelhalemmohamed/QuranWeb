@@ -42,8 +42,6 @@ const RandomAyah = () => {
     setShowAyah(false);
   };
 
-  console.log(ayahs);
-
   return (
     <div className="space-y-5 mt-15 sm:p-5 p-3">
       <div className="text-ayahs space-y-5 flex flex-col items-center justify-center">

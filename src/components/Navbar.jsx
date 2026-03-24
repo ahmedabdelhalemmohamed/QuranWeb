@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className='animate-menu fixed z-50 w-100'>
             <ul className='font-cairo text-2xl flex flex-col space-y-3 bg-indigo-500 min-h-56 text-white sm:hidden text-center'>
               <li className='btn-nav' onClick={() => setOpenMenu(prev => !prev)}> <Link to="/">الصفحة الرئيسية</Link></li>
-              <li className='btn-nav' onClick={() => setOpenMenu(prev => !prev)}>تفسير</li>  
+              <li className='btn-nav' onClick={() => setOpenMenu(prev => !prev)}><Link to="/tafsir">تفسير</Link></li>  
             </ul>  
         </div> 
         :

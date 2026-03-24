@@ -69,7 +69,7 @@ const Quran = () => {
     if (!ayahs.length) return;
 
     const firstPageInSurah = ayahs[0].page;
-    console.log(firstPageInSurah)
+    
 
     if (showPage > firstPageInSurah) {
       setShowPage(showPage - 1);
@@ -110,9 +110,9 @@ const Quran = () => {
       <div className='flex flex-wrap justify-center space-x-2 space-y-5  mt-10 font-cairo'>
         {ayahs
           .filter((ayah) => ayah.page === showPage)
-          .map((ayah) => (
+          .map((ayah, index) => (
             
-              <span className='text-center text-xl sm:text-2xl leading-loose'>
+              <span key={index} className='text-center text-xl sm:text-2xl leading-loose'>
                 {ayah.text}
                 <span className='mr-2'>({ayah.numberInSurah})</span>
               </span>

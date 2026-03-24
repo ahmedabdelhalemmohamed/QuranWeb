@@ -28,10 +28,10 @@ const Remembrances = () => {
   return (
     <div className='text-center space-y-5 mt-5 text-ayahs pad'>
         {
-        rem.map((re) => {
+        rem.map((re, index) => {
           return (
-            re.id === Number(id) && re.text?.map((te) => (
-            <div className='btn-menu '>
+            re.id === Number(id) && re.text?.map((te,index) => (
+            <div className='btn-menu' key={index}>
               <span>{te.content}</span>
               <div className='mt-5 mb-2'>
                 <span className='bg-slate-600 p-2 rounded-2xl'>Count: {te.count}</span>
