@@ -22,7 +22,9 @@ const Home = () => {
           <div>
             <Link to={`/remembrances/2`} className='btn-home'>أذكار المساء</Link>
           </div>
-
+          <div>
+            <Link to="question" className='btn-home'>أسئلة</Link>
+          </div>
 
         </div>
     </div>

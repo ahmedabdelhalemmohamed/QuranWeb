@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import data from "../data";
 import { Link, useParams } from 'react-router-dom';
