@@ -38,10 +38,10 @@ const Questions = () => {
         console.log(current);
 
         return (
-          <div key={qIndex} className='space-x-3 pad border border-slate-500 rounded-lg p-3 bg-indigo-500 text-white cursor-pointer font-cairo text-ayahs overflow-hidden'>
+          <div key={qIndex} className='space-x-3 pad border border-indigo-500 rounded-lg p-3 bg-indigo-100  text-white cursor-pointer font-cairo text-ayahs overflow-hidden'>
 
             <span className='btn !bg-slate-600 inline-block'>{q.category}</span>
-            <span className='hidden sm:inline-block'>&gt;</span>
+            <span className='hidden sm:inline-block text-black'>&gt;</span>
             <span className='btn !bg-slate-600 inline-block'>{q.topic}</span>
 
             <div className='mt-5'>
@@ -54,7 +54,7 @@ const Questions = () => {
                 {q.answers.map((ans, index) => (
                   <div key={index} className='transition-transform hover:scale-110'>
                     <span
-                      className={`btn inline-block  ${
+                      className={`btn-nav inline-block  ${
                         current
                           ? ans.t === 1
                             ? "!bg-green-500  opacity-70"
@@ -89,7 +89,7 @@ const Questions = () => {
       <div className="text-center mt-10">
         <button
           onClick={() => setAnother(prev => !prev)}
-          className="btn !bg-blue-500"
+          className="btn text-white"
         >
           أسئلة جديدة
         </button>

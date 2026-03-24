@@ -85,7 +85,7 @@ const Quran = () => {
   };
 
   return (
-    <div className='p-2 '>
+    <div className='p-2 bg-slate-500 text-white mt-15 rounded-lg mb-10'>
     
       <div className='flex justify-around mb-5 mt-5  text-white'>
         <select

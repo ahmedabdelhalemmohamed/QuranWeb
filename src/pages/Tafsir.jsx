@@ -47,7 +47,7 @@ const Tafsir = () => {
   }, [indexSurah, tafsir, indexAyah]);
 
   return (
-    <div className="text-center mt-10 space-y-5 text-ayahs pad space-x-5">
+    <div className="text-center mt-10 space-y-5 text-ayahs pad space-x-5 bg-slate-500 text-white mt-15 rounded-lg mb-10">
       <select
         value={indexSurah}
         onChange={(e) => {
